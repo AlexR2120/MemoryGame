@@ -1,24 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="Lxh-LG-4zg">
+            <objects>
+                <viewController id="yVe-ty-c1F" customClass="ViewController" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZUN-yr-cAT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRQ-E6-fyH">
+                                <rect key="frame" x="174" y="750" width="68" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="JUGAR"/>
+                                <connections>
+                                    <action selector="playButton:" destination="yVe-ty-c1F" eventType="touchUpInside" id="UyU-jI-8ie"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3x-9l-nBC">
+                                <rect key="frame" x="20" y="310" width="157" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-lN-4jl">
+                                <rect key="frame" x="237" y="310" width="157" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNj-yC-Rla">
+                                <rect key="frame" x="129" y="505" width="157" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JUEGO DE MEMORIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-Ai-daj">
+                                <rect key="frame" x="99" y="138" width="226" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4f4-Xp-UPR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="image1" destination="v3x-9l-nBC" id="3hH-Re-O7z"/>
+                        <outlet property="image2" destination="ez4-lN-4jl" id="IRP-vF-MUo"/>
+                        <outlet property="image3" destination="kNj-yC-Rla" id="Hgd-Ew-gG9"/>
+                        <outlet property="playButton" destination="fRQ-E6-fyH" id="x4X-Yv-ZvN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slg-po-5Cv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcK-zn-ep1">
+                                <rect key="frame" x="174" y="750" width="68" height="36"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="OAA-TE-KDW"/>
+                                    <constraint firstAttribute="width" constant="68" id="d8c-wc-0Fm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="JUGAR"/>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fet-sf-JgP"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="781-5d-pdC">
+                                <rect key="frame" x="20" y="310" width="157" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Dk2-eN-bCR"/>
+                                    <constraint firstAttribute="width" constant="157" id="POg-6e-Atp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OMc-zl-P7X">
+                                <rect key="frame" x="237" y="310" width="157" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MN9-2P-2Bh"/>
+                                    <constraint firstAttribute="width" constant="157" id="hfB-Ss-Uvn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uOJ-36-dAL">
+                                <rect key="frame" x="129" y="505" width="157" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Ut1-Ib-cG7"/>
+                                    <constraint firstAttribute="width" constant="157" id="bDa-Qb-hYS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUEGO DE MEMORIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuB-5r-aA3">
+                                <rect key="frame" x="99" y="138" width="226" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="0Ve-eg-LYu"/>
+                                    <constraint firstAttribute="height" constant="28" id="bYO-3y-8Ln"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uOJ-36-dAL" firstAttribute="top" secondItem="781-5d-pdC" secondAttribute="bottom" constant="67" id="18s-tF-yzz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jcK-zn-ep1" secondAttribute="bottom" constant="76" id="1gP-fd-gfe"/>
+                            <constraint firstItem="OMc-zl-P7X" firstAttribute="leading" secondItem="781-5d-pdC" secondAttribute="trailing" constant="60" id="2WK-e9-lND"/>
+                            <constraint firstItem="OMc-zl-P7X" firstAttribute="top" secondItem="BuB-5r-aA3" secondAttribute="bottom" constant="144" id="2xn-eU-d78"/>
+                            <constraint firstItem="jcK-zn-ep1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="3H7-8e-did"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BuB-5r-aA3" secondAttribute="trailing" constant="89" id="Clc-qy-gWH"/>
+                            <constraint firstItem="OMc-zl-P7X" firstAttribute="leading" secondItem="781-5d-pdC" secondAttribute="trailing" constant="60" id="GM3-aK-SVO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OMc-zl-P7X" secondAttribute="trailing" constant="20" id="J97-sf-0r9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jcK-zn-ep1" secondAttribute="trailing" constant="172" id="QEh-nD-58V"/>
+                            <constraint firstItem="781-5d-pdC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QIV-Za-0bT"/>
+                            <constraint firstItem="BuB-5r-aA3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="V8u-1Z-cKu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jcK-zn-ep1" secondAttribute="bottom" constant="76" id="V9p-6P-fOV"/>
+                            <constraint firstItem="BuB-5r-aA3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="94" id="cBy-qN-mDO"/>
+                            <constraint firstItem="uOJ-36-dAL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="duQ-FD-zHE"/>
+                            <constraint firstItem="781-5d-pdC" firstAttribute="top" secondItem="BuB-5r-aA3" secondAttribute="bottom" constant="144" id="ePH-Ra-Hto"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uOJ-36-dAL" secondAttribute="trailing" constant="128" id="mSb-38-NAv"/>
+                            <constraint firstItem="uOJ-36-dAL" firstAttribute="top" secondItem="OMc-zl-P7X" secondAttribute="bottom" constant="67" id="o1q-A9-KAB"/>
+                            <constraint firstItem="uOJ-36-dAL" firstAttribute="top" secondItem="781-5d-pdC" secondAttribute="bottom" constant="67" id="rwa-4x-7SS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jcK-zn-ep1" secondAttribute="trailing" constant="172" id="s35-6C-If4"/>
+                            <constraint firstItem="781-5d-pdC" firstAttribute="top" secondItem="BuB-5r-aA3" secondAttribute="bottom" constant="144" id="uij-8L-hXB"/>
+                            <constraint firstItem="jcK-zn-ep1" firstAttribute="top" secondItem="uOJ-36-dAL" secondAttribute="bottom" constant="117" id="v4c-RW-UOk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image1" destination="781-5d-pdC" id="qXp-su-p8u"/>
+                        <outlet property="image2" destination="OMc-zl-P7X" id="uyA-yz-D6p"/>
+                        <outlet property="image3" destination="uOJ-36-dAL" id="0I1-1h-PbW"/>
+                        <outlet property="playButton" destination="jcK-zn-ep1" id="YfY-hk-KBH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+        <!--Memory Game-->
+        <scene sceneID="21w-v9-3MT">
+            <objects>
+                <viewController id="1wJ-qL-00d" customClass="MemoryGame" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E2I-IL-JcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adivina las 3 imágenes anteriores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-Ey-IRm">
+                                <rect key="frame" x="28" y="131" width="359" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhP-ZJ-7Tq">
+                                <rect key="frame" x="75" y="248" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOj-1V-0qi">
+                                <rect key="frame" x="295" y="248" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-mh-QaK">
+                                <rect key="frame" x="295" y="403" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-Py-6qT">
+                                <rect key="frame" x="75" y="548" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hd-aw-rsP">
+                                <rect key="frame" x="295" y="548" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSA-cR-HIa">
+                                <rect key="frame" x="75" y="403" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Caj-Pr-gLn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyA-px-tGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
